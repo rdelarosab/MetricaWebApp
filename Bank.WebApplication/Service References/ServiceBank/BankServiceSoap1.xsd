@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Bank.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Bank.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfBankBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BankBE" nillable="true" type="tns:BankBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBankBE" nillable="true" type="tns:ArrayOfBankBE" />
+  <xs:complexType name="BankBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdBanco" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankBE" nillable="true" type="tns:BankBE" />
+  <xs:complexType name="ArrayOfBranchBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BranchBE" nillable="true" type="tns:BranchBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBranchBE" nillable="true" type="tns:ArrayOfBranchBE" />
+  <xs:complexType name="BranchBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdBanco" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSucursal" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BranchBE" nillable="true" type="tns:BranchBE" />
+  <xs:complexType name="ArrayOfOrderBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderBE" nillable="true" type="tns:OrderBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderBE" nillable="true" type="tns:ArrayOfOrderBE" />
+  <xs:complexType name="OrderBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" type="xs:int" />
+      <xs:element minOccurs="0" name="FechaPago" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdBanco" type="xs:int" />
+      <xs:element minOccurs="0" name="IdOrden" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSucursal" type="xs:int" />
+      <xs:element minOccurs="0" name="Moneda" type="xs:int" />
+      <xs:element minOccurs="0" name="Monto" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TxtSucursal" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderBE" nillable="true" type="tns:OrderBE" />
+</xs:schema>

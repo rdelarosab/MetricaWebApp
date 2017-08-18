@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Bank.WebApplication.ViewModels.BankVM>
+
+@{
+    ViewBag.Title = "Bancos";
+}
+
+<h2>Bancos</h2>
+
+<p>
+    @Html.ActionLink("Crear Banco", "Create", "Home")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            #
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th></th>
+    </tr>
+@{var i = 0; }
+@foreach (var item in Model)
+{
+    i++;
+    <tr>
+        <td>
+            @i
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { idBanco = item.IdBanco }) |
+            @Html.ActionLink("Eliminar", "Delete", new { idBanco = item.IdBanco }) |
+            @Html.ActionLink("Sucursales", "Index", "Branch", new { idBanco = item.IdBanco, nombreBanco = item.Nombre }, null)
+        </td>
+    </tr>
+}
+
+</table>

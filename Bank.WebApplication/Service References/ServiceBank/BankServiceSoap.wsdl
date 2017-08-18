@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BankServiceSoap" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2886/BankServiceSoap.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2886/BankServiceSoap.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2886/BankServiceSoap.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Bank.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBankServiceSoap_GetAllBanks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBanks" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_GetAllBanks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBanksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_InsertBank_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBank" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_InsertBank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_UpdateBank_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBank" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_UpdateBank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_DeleteBank_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBank" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_DeleteBank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_GetAllBranchs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBranchs" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_GetAllBranchs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBranchsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_GetBank_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBank" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_GetBank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_InsertBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBranch" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_InsertBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_UpdateBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBranch" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_UpdateBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_DeleteBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBranch" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_DeleteBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_GetBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranch" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_GetBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_GetAllOrdersByBank_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrdersByBank" />
+  </wsdl:message>
+  <wsdl:message name="IBankServiceSoap_GetAllOrdersByBank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrdersByBankResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBankServiceSoap">
+    <wsdl:operation name="GetAllBanks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankServiceSoap/GetAllBanks" message="tns:IBankServiceSoap_GetAllBanks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankServiceSoap/GetAllBanksResponse" message="tns:IBankServiceSoap_GetAllBanks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBank">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankServiceSoap/InsertBank" message="tns:IBankServiceSoap_InsertBank_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankServiceSoap/InsertBankResponse" message="tns:IBankServiceSoap_InsertBank_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBank">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankServiceSoap/UpdateBank" message="tns:IBankServiceSoap_UpdateBank_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankServiceSoap/UpdateBankResponse" message="tns:IBankServiceSoap_UpdateBank_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBank">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankServiceSoap/DeleteBank" message="tns:IBankServiceSoap_DeleteBank_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankServiceSoap/DeleteBankResponse" message="tns:IBankServiceSoap_DeleteBank_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBranchs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankServiceSoap/GetAllBranchs" message="tns:IBankServiceSoap_GetAllBranchs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankServiceSoap/GetAllBranchsResponse" message="tns:IBankServiceSoap_GetAllBranchs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBank">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankServiceSoap/GetBank" message="tns:IBankServiceSoap_GetBank_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankServiceSoap/GetBankResponse" message="tns:IBankServiceSoap_GetBank_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBranch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankServiceSoap/InsertBranch" message="tns:IBankServiceSoap_InsertBranch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankServiceSoap/InsertBranchResponse" message="tns:IBankServiceSoap_InsertBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBranch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankServiceSoap/UpdateBranch" message="tns:IBankServiceSoap_UpdateBranch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankServiceSoap/UpdateBranchResponse" message="tns:IBankServiceSoap_UpdateBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBranch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankServiceSoap/DeleteBranch" message="tns:IBankServiceSoap_DeleteBranch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankServiceSoap/DeleteBranchResponse" message="tns:IBankServiceSoap_DeleteBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankServiceSoap/GetBranch" message="tns:IBankServiceSoap_GetBranch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankServiceSoap/GetBranchResponse" message="tns:IBankServiceSoap_GetBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrdersByBank">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankServiceSoap/GetAllOrdersByBank" message="tns:IBankServiceSoap_GetAllOrdersByBank_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankServiceSoap/GetAllOrdersByBankResponse" message="tns:IBankServiceSoap_GetAllOrdersByBank_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBankServiceSoap" type="tns:IBankServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllBanks">
+      <soap:operation soapAction="http://tempuri.org/IBankServiceSoap/GetAllBanks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBank">
+      <soap:operation soapAction="http://tempuri.org/IBankServiceSoap/InsertBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBank">
+      <soap:operation soapAction="http://tempuri.org/IBankServiceSoap/UpdateBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBank">
+      <soap:operation soapAction="http://tempuri.org/IBankServiceSoap/DeleteBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBranchs">
+      <soap:operation soapAction="http://tempuri.org/IBankServiceSoap/GetAllBranchs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBank">
+      <soap:operation soapAction="http://tempuri.org/IBankServiceSoap/GetBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBranch">
+      <soap:operation soapAction="http://tempuri.org/IBankServiceSoap/InsertBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBranch">
+      <soap:operation soapAction="http://tempuri.org/IBankServiceSoap/UpdateBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBranch">
+      <soap:operation soapAction="http://tempuri.org/IBankServiceSoap/DeleteBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranch">
+      <soap:operation soapAction="http://tempuri.org/IBankServiceSoap/GetBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrdersByBank">
+      <soap:operation soapAction="http://tempuri.org/IBankServiceSoap/GetAllOrdersByBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BankServiceSoap">
+    <wsdl:port name="BasicHttpBinding_IBankServiceSoap" binding="tns:BasicHttpBinding_IBankServiceSoap">
+      <soap:address location="http://localhost:2886/BankServiceSoap.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -9,8 +9,25 @@ namespace Bank.ServiceContracts
     {
         [OperationContract]
         List<BankBE> GetAllBanks();
-
+        [OperationContract]
+        int InsertBank(BankBE modelBE);
+        [OperationContract]
+        int UpdateBank(BankBE modelBE);
+        [OperationContract]
+        int DeleteBank(int idBanco);
         [OperationContract]
         List<BranchBE> GetAllBranchs(int idBanco);
+        [OperationContract]
+        BankBE GetBank(int idBanco);
+        [OperationContract]
+        int InsertBranch(BranchBE modelBE);
+        [OperationContract]
+        int UpdateBranch(BranchBE modelBE);
+        [OperationContract]
+        int DeleteBranch(int idBanco);
+        [OperationContract]
+        BranchBE GetBranch(int idBanco);
+        [OperationContract]
+        List<OrderBE> GetAllOrdersByBank(int idBanco);
     }
 }

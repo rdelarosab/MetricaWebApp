@@ -9,6 +9,12 @@ namespace Bank.BusinessLogic
         public List<OrderBE> GetAllOrdersFilter(int idSucursal, int moneda)
         {
             return new OrderDA().GetAllOrdersFilter(idSucursal, moneda);
-        }   
+        }
+
+        public List<OrderBE> GetAllOrdersByBank(int idBanco)
+        {
+            return new OrderDA().GetAllOrdersByBank(idBanco);
+        }
+        
     }
 }

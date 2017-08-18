@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.WebApplication", "Bank.WebApplication\Bank.WebApplication.csproj", "{7614C823-ECC3-450B-81DA-7B7EA6D2C1AC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{55E01DB1-18F4-4C0B-9A9D-8A341AD81767} = {55E01DB1-18F4-4C0B-9A9D-8A341AD81767}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Client", "1. Client", "{5BF53672-A8CD-4568-8524-7D23B3AD604A}"
 EndProject

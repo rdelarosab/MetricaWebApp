@@ -1,0 +1,51 @@
+﻿@model Bank.WebApplication.ViewModels.IndexBranchVM
+
+@{
+    ViewBag.Title = "Sucursales";
+}
+
+<h2>Sucursales del banco @Model.BankName</h2>
+
+<p>
+    @Html.ActionLink("Crear Sucursal", "Create", new { idBanco = Model.BankId})
+    @Html.ActionLink("Ordenes de Pago", "Index", "Order",new { bancoId = Model.BankId, nombreBanco = Model.BankName}, null)
+</p>
+<table class="table">
+    <tr>
+        <th>
+            #
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Direccion
+        </th>
+        <th>
+            
+        </th>
+    </tr>
+    @{var i = 0; }
+    @foreach (var item in Model.BranchVm)
+    {
+        i++;
+        <tr>
+            <td>
+                @i
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { idSucursal = item.IdSucursal }) |
+                @Html.ActionLink("Eliminar", "Delete", new { idSucursal = item.IdSucursal })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.ActionLink("Regresar", "Index", "Home")

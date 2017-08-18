@@ -1,25 +1,16 @@
-﻿using System.Runtime.Serialization;
-
-namespace Bank.Entities
+﻿namespace Bank.WebApplication.ViewModels
 {
-    [DataContract]
-    public class OrderBE
+    public class OrderVM
     {
-        [DataMember]
         public int IdOrden { get; set; }
-        [DataMember]
         public decimal Monto { get; set; }
-        [DataMember]
         public int Moneda { get; set; }
-        [DataMember]
         public int Estado { get; set; }
-        [DataMember]
         public string FechaPago { get; set; }
-        [DataMember]
         public int IdSucursal { get; set; }
-        [DataMember]
         public int IdBanco { get; set; }
-        [DataMember]
+        public string TxtMoneda { get; set; }
+        public string TxtEstado { get; set; }
         public string TxtSucursal { get; set; }
     }
 }
