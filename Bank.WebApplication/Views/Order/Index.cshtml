@@ -7,7 +7,7 @@
 <h2>Ordenes de Pago - Banco @Model.BankName</h2>
 
 <p>
-    @Html.ActionLink("Crear", "Create")
+    <a href="javascript:void(0);">Crear</a>
 </p>
 <table class="table">
     <tr>
@@ -55,7 +55,7 @@
                 @Html.DisplayFor(modelItem => item.TxtSucursal)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })
+                <a href="javascript:void(0);">Editar</a>
             </td>
         </tr>
     }
